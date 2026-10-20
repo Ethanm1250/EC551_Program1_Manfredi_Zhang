@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+out/
+
+# Vivado build products
+*.bit
+*.rpt
+*.jou
+*.log
+.Xil/

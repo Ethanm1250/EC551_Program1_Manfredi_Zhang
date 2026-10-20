@@ -1,0 +1,18 @@
+# 1-bit full adder as a multi-level BLIF logic network
+.model full_adder
+.inputs a b cin
+.outputs sum cout
+.names a b p
+10 1
+01 1
+.names p cin sum
+10 1
+01 1
+.names a b g
+11 1
+.names p cin t
+11 1
+.names g t cout
+1- 1
+-1 1
+.end

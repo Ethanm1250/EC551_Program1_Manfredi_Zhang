@@ -1,0 +1,3 @@
+# Product-of-sums and maxterm-list inputs; two outputs share the inputs A..D
+F(A,B,C,D) = (A + B')(B + C + D')(A' + C)
+G(A,B,C,D) = M(0,2,8,10,15)

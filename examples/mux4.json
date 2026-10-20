@@ -1,0 +1,14 @@
+{
+  "name": "mux4",
+  "inputs": ["s1", "s0", "d0", "d1", "d2", "d3"],
+  "outputs": ["y"],
+  "gates": [
+    {"name": "s1_n", "type": "NOT", "inputs": ["s1"]},
+    {"name": "s0_n", "type": "NOT", "inputs": ["s0"]},
+    {"name": "t0",   "type": "AND", "inputs": ["s1_n", "s0_n", "d0"]},
+    {"name": "t1",   "type": "AND", "inputs": ["s1_n", "s0",   "d1"]},
+    {"name": "t2",   "type": "AND", "inputs": ["s1",   "s0_n", "d2"]},
+    {"name": "t3",   "type": "AND", "inputs": ["s1",   "s0",   "d3"]},
+    {"name": "y",    "type": "OR",  "inputs": ["t0", "t1", "t2", "t3"]}
+  ]
+}

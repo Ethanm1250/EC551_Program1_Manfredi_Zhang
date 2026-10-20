@@ -1,0 +1,7 @@
+# ABC-style EQN file with intermediate nodes (multi-level logic)
+INORDER = a b c d;
+OUTORDER = parity maj;
+x1 = a ^ b;
+x2 = c ^ d;
+parity = x1 ^ x2;
+maj = a*b + a*c + b*c;

@@ -1,0 +1,3 @@
+# Classic static-1 hazard example: the minimal SOP AB' + BC glitches when
+# A=1, C=1 and B toggles.  Try:  --ops minsop,hazard
+F(A,B,C) = AB' + BC

@@ -1,0 +1,2 @@
+# Cyclic core: 6 prime implicants, none essential -> exercises branch and bound
+F(A,B,C) = m(0,1,2,5,6,7)
