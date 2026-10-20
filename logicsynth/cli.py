@@ -177,7 +177,12 @@ def main(argv=None):
     ap.add_argument("-o", "--report", metavar="FILE", help="also write all text output to this file")
     ap.add_argument("--max-terms", type=int, default=64, help="max list items printed (0 = unlimited)")
     ap.add_argument("-i", "--interactive", action="store_true", help="open the shell after running")
+    ap.add_argument("--gui", action="store_true", help="open the graphical interface")
     args = ap.parse_args(argv)
+
+    if args.gui:
+        from .gui import main as gui_main
+        return gui_main([args.file] if args.file else [])
 
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(errors="replace")

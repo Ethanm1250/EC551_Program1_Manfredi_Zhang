@@ -37,6 +37,26 @@ python -m logicsynth examples/bcd_7seg.pla --verilog out/bcd_7seg.v --fpga out/b
 python -m logicsynth examples/full_adder.blif
 ```
 
+### Graphical interface
+
+```bash
+python -m logicsynth --gui                     # or: python -m logicsynth.gui
+python -m logicsynth --gui examples/hazard.eqn # open with a design loaded
+```
+
+On Windows you can also double-click `LogicSynth.pyw`. The GUI uses Tkinter,
+which comes with Python. It calls the same `Engine` methods as the CLI and
+has controls for:
+
+* loading a file, an example, or an equation;
+* choosing which outputs to operate on;
+* running any of the 12 operations;
+* K-map, truth table, and equivalence checking;
+* previewing or saving structural Verilog;
+* generating the FPGA project and exporting a truth-table CSV.
+
+You can save or copy the output pane as a report.
+
 Run the unit tests:
 
 ```bash
@@ -50,9 +70,11 @@ python -m unittest discover -s tests -v
 ```
 EC551-LogicSynthesis/
 ├── README.md
+├── LogicSynth.pyw              # double-click launcher for the GUI
 ├── logicsynth/                 # the engine (Python package)
 │   ├── __main__.py             # `python -m logicsynth` entry point
 │   ├── cli.py                  # argparse one-shot mode + interactive shell (cmd.Cmd)
+│   ├── gui.py                  # Tkinter graphical interface (--gui)
 │   ├── engine.py               # the 12 operations, Verilog/FPGA commands, text formatting
 │   ├── boolfunc.py             # truth-vector function model, cubes, expression printing
 │   ├── minimize.py             # prime implicants + exact branch-and-bound cover
